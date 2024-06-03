@@ -1,52 +1,30 @@
-<h1>Anime.js to MP4 Video</h1>
-<p>with FFMPEG & Node.js</p>
-	
-<section class="columns">
-	
-<div class="container">
-
-<div class="svg">
-
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="2.102 -71.914 31.153 25.275" enable-background="new 2.102 -71.914 31.153 25.275" xml:space="preserve">
-<radialGradient id="SVGID_1_" cx="716.6597" cy="241.3943" r="43.395" fx="717.394" fy="242.5251" gradientTransform="matrix(0.2772 -0.0149 0.0044 0.0569 -182.6991 -52.4088)" gradientUnits="userSpaceOnUse">
-	<stop  offset="0.0044" style="stop-color:#272727"/>
-	<stop  offset="0.1321" style="stop-color:#575757"/>
-	<stop  offset="0.2869" style="stop-color:#898989"/>
-	<stop  offset="0.4398" style="stop-color:#B4B4B4"/>
-	<stop  offset="0.5874" style="stop-color:#D5D5D5"/>
-	<stop  offset="0.7284" style="stop-color:#ECECEC"/>
-	<stop  offset="0.8599" style="stop-color:#FAFAFA"/>
-	<stop  offset="0.9726" style="stop-color:#FFFFFF"/>
-</radialGradient>
-<path opacity="0.81" fill="url(#SVGID_1_)" d="M30.44-50.13c0.111,1.45-5.929,2.977-13.481,3.387
-	c-7.575,0.415-13.787-0.445-13.897-1.895c-0.115-1.473,5.912-2.998,13.484-3.411C24.099-52.458,30.325-51.6,30.44-50.13z"/>
-<g>
-	<g>
-		<path fill-rule="evenodd" clip-rule="evenodd" fill="#9E9C98" d="M17.709-52.308c-2.397,3.265-5.908,2.614-9.08-0.086
-			c-3.145-2.664-5.615-6.969-6.527-10.609c8.685,10.912,11.843,5.594,14.138-0.466c1.815-4.774,3.008-9.781,7.815-8.12
-			c-2.348,0.097-3.104,3.021-3.588,6.701C19.868-60.495,19.604-54.884,17.709-52.308L17.709-52.308z"/>
-		<path fill-rule="evenodd" clip-rule="evenodd" fill="#FF4F00" d="M22.875-70.68c1.223-1.104,3.105-0.368,5.001,1.109
-			c1.899,1.499,3.954,3.873,5.379,6.122c-6.479-6.475-7.584-4.065-8.401,0.288c-1.01,5.37-1.725,14.741-9.425,13.617
-			c4.026-1.506,5.151-7.184,5.692-12.144C21.578-65.833,21.675-69.577,22.875-70.68L22.875-70.68z"/>
-	</g>
-</g>
-</svg>
-
-</div>
-
-<div class="company">Company Name</div>
-<div class="slogan">Company Slogan</div>
-
-</div>
-	
-</section>	
-
-<section class="columns">
-<button class="button" type="button">Convert</button>
-</section>	
-
-<script src="/javascripts/index.js"></script>
-	
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Subtitles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Quicksand', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+        .subtitles {
+            font-size: 2em;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="subtitles"></div>
+    <script src="animationScript.js"></script>
+</body>
+</html>
