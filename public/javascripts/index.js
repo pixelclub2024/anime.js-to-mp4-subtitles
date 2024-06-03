@@ -1,58 +1,30 @@
 window.addEventListener("DOMContentLoaded", () => {
-	
-let timeline = anime.timeline({
-loop: false,
-autoplay: true
-})
-		
-function initiate() {	
-	
-timeline.add({
-    targets: '.svg',
-    scale: [0, 1],
-    opacity: [0,1],
-    easing: 'easeOutExpo',
-    duration: 1500,
-    endDelay: 0
-}).add({
-    targets: '.company',
-	"translateX": [-150, 0],
-    opacity: [0,1],
-    duration: 2000,
-    endDelay: 0
-}).add({
-    targets: '.slogan',
-	"translateY": [50, 0],
-    opacity: [0,1],
-    duration: 1000,
-    endDelay: 0
-})
+    let timeline = anime.timeline({ loop: false, autoplay: true });
 
-};
+    function displaySubtitles() {
+        const subtitles = [
+            { text: "Welcome to our presentation", start: 500, duration: 3000 },
+            { text: "Exploring the wonders of Anime.js", start: 4000, duration: 3000 },
+            { text: "Thank you for watching", start: 8000, duration: 3000 }
+        ];
 
-initiate();
+        subtitles.forEach(sub => {
+            timeline.add({
+                targets: '.subtitles',
+                begin: function() {
+                    document.querySelector('.subtitles').innerHTML = sub.text;
+                },
+                opacity: [0, 1],
+                translateY: [30, 0],
+                easing: 'easeOutExpo',
+                duration: 800,
+                endDelay: sub.duration - 800,
+                complete: function() {
+                    document.querySelector('.subtitles').innerHTML = "";
+                }
+            }, sub.start);
+        });
+    }
 
-
-const convert = async () => {
-	
-let data = {
-html: document.querySelectorAll('.container')[0].outerHTML,
-animation: initiate.toLocaleString(),
-duration: Number(timeline.duration/1000),
-width: document.querySelectorAll('.container')[0].offsetWidth,
-height: document.querySelectorAll('.container')[0].offsetHeight,
-}
-
-const response = await fetch("/convert-to-video", {
-method: "POST",
-headers: {
-"content-type": "application/json",
-},
-body: JSON.stringify(data),
-});
-
-};
-
-document.querySelectorAll('.button')[0].onclick = convert;
-	
+    displaySubtitles();
 });
